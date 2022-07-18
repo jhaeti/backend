@@ -10,5 +10,20 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     command: yarn start:docker
+    depends_on:
+      - mongo
     environment:
       PORT: 5000
+      MONGO_URI: mongodb://root:example@mongo:27017/?authSource=admin&readPreference=primary&ssl=false
+
+  mongo:
+    image: mongo:4.0.5
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - 27017:27017
+      - 27018:27017
+    volumes:
+      - /usr/src/app/data/db
