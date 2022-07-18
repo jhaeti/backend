@@ -1,15 +1,7 @@
-import express from "express";
-import morgan from "morgan";
+import app from "./app";
 
-const app = express();
+const port = Number(process.env.PORT ?? 5000);
 
-app.use(morgan("dev"));
-
-app.get("/", (req, res) => {
-  res.send({ hello: "world13!" });
-});
-
-const port = Number(process.env.PORT ?? 8080);
 app.listen(port, "0.0.0.0", () => {
   console.log(`Backend running on port ${port}`);
 });
