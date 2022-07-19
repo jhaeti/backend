@@ -27,7 +27,8 @@
     },
     "scripts": {
         "start": "node dist/index.js",
-        "start:docker": "yarn build && node --inspect=0.0.0.0 dist/index.js",
+        "rebuild:docker": "yarn build && node --inspect=0.0.0.0 dist/index.js",
+        "start:docker": "docker compose up",
         "stop:docker": "docker compose stop",
         "build": "rimraf dist && swc ./src -d dist"
     }
