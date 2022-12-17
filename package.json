@@ -4,7 +4,7 @@
     "main": "index.js",
     "license": "MIT",
     "volta": {
-        "node": "17.9.1"
+        "node": "18.12.1"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
@@ -30,7 +30,8 @@
         "rebuild:docker": "yarn build && node --inspect=0.0.0.0 dist/index.js",
         "build:docker": "docker compose build",
         "start:docker": "docker compose up",
-        "stop:docker": "docker compose stop",
-        "build": "rimraf dist && swc ./src -d dist"
+        "stop:docker": "docker compose down",
+        "build": "rimraf dist && swc ./src -d dist",
+        "create-network:docker": "docker network create service || true"
     }
 }
