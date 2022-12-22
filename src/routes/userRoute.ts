@@ -7,11 +7,10 @@ import User from '../models/User';
 router.post('/users', async (req, res) => {
     try {
         const user = new User(req.body);
-        console.log(user);
         await user.save();
         res.json({ user });
     } catch (e) {
-        console.log(e);
+        res.sendStatus(400);
     }
 });
 
