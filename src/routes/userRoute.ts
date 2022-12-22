@@ -19,5 +19,13 @@ router.get('/users', async (req, res) => {
     const users = await User.find();
     res.json({ users });
 });
+router.delete('/users/:id', async (req, res) => {
+    try {
+        const user = await User.findByIdAndDelete(req.params.id);
+        res.json({ user });
+    } catch (e) {
+        res.sendStatus(400);
+    }
+});
 
 export default router;
