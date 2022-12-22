@@ -1,10 +1,18 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 import "./db";
 
 const app = express();
 
+// Accept cross-origin-request
+app.use(
+    cors({
+        origin: "true",
+        credentials: true,
+    })
+);
 // Logging all request to the server console
 app.use(morgan("dev"));
 
