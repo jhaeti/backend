@@ -5,7 +5,7 @@ import * as dotenv from 'dotenv';
 
 dotenv.config();
 
-import './db';
+import './utils/connectDb';
 
 // Api routes
 import UserApi from './routes/userRoute';
