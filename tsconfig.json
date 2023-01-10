@@ -1,9 +1,9 @@
 {
-	"extends": "@tsconfig/node16/tsconfig.json",
-	"compilerOptions": {
-		"lib": ["ESNext"],
-		"outDir": "dist"
-	},
-	"include": ["src"],
-	"exclude": ["node_modules", "**/*.test.ts"]
+    "extends": "@tsconfig/node16/tsconfig.json",
+    "compilerOptions": {
+        "lib": ["ESNext"],
+        "outDir": "dist"
+    },
+    "include": ["src", "src/**/*.ts"],
+    "exclude": ["node_modules", "**/*.test.ts"]
 }
