@@ -1,7 +1,8 @@
 {
-  "recommendations": [
-    "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
-    "gruntfuggly.triggertaskonsave"
-  ]
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "gruntfuggly.triggertaskonsave",
+        "wayou.vscode-todo-highlight"
+    ]
 }
