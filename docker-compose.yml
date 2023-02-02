@@ -14,7 +14,7 @@ services:
         depends_on:
             - mongo
         environment:
-            MONGO_URI: mongodb://root:example@mongo:27017/?authSource=admin&readPreference=primary&ssl=false
+            MONGO_URI: mongodb://root:example@mongo:27017/dev?authSource=admin&readPreference=primary&ssl=false
 
     mongo:
         image: mongo:4.0.5
