@@ -8,20 +8,27 @@
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "cookie-parser": "^1.4.6",
         "cors": "^2.8.5",
         "dotenv": "^16.0.3",
         "express": "^4.18.1",
+        "express-async-errors": "^3.1.1",
+        "jsonwebtoken": "^9.0.0",
         "mongoose": "^6.4.4",
         "morgan": "^1.10.0",
-        "typescript": "^4.7.4"
+        "typescript": "^4.7.4",
+        "zod": "^3.20.2"
     },
     "devDependencies": {
         "@swc/cli": "^0.1.57",
         "@swc/core": "^1.2.215",
         "@tsconfig/node16": "^1.0.3",
+        "@types/bcryptjs": "^2.4.2",
+        "@types/cookie-parser": "^1.4.3",
         "@types/cors": "^2.8.13",
         "@types/express": "^4.17.13",
         "@types/jest": "^29.2.5",
+        "@types/jsonwebtoken": "^9.0.0",
         "@types/morgan": "^1.9.3",
         "@types/node": "^18.0.5",
         "@types/supertest": "^2.0.12",
@@ -40,6 +47,9 @@
         "start:docker": "docker compose up",
         "stop:docker": "docker compose down",
         "build": "rimraf dist && swc ./src -d dist",
-        "test": "jest --watch"
+        "test": "jest --detectOpenHandles --watchAll",
+        "test:staging": "jest --detectOpenHandles",
+        "test:docker": "docker compose exec backend yarn test",
+        "install:docker": "docker compose exec backend yarn install --save"
     }
 }
