@@ -14,13 +14,10 @@ services:
         depends_on:
             - mongo
         environment:
-            MONGO_URI: mongodb://root:example@mongo:27017/dev?authSource=admin&readPreference=primary&ssl=false
+            MONGO_URI: mongodb://mongo:27017/dev?authSource=admin&readPreference=primary&ssl=false
 
     mongo:
         image: mongo:4.0.5
-        environment:
-            MONGO_INITDB_ROOT_USERNAME: root
-            MONGO_INITDB_ROOT_PASSWORD: example
         ports:
             - 27017:27017
             - 27018:27017
