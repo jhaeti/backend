@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 import TestError from '../errors/UserAuthError';
 
 // Get token from cookies
-// Recieve a cookieName and returns the token corresponding to that cookie
+// Receive a cookieName and returns the token corresponding to that cookie
 export const getAuthToken = async (req: Request) => {
     // Getting cookie from the req since it would be sent along with the request if present
     const token: string = req.cookies[process.env.AUTH_COOKIE_NAME];
-    if (!token) throw new TestError('No token, authorisation deneid');
+    if (!token) throw new TestError('No token, authorization denied');
     return token;
 };
 

@@ -47,7 +47,7 @@
         "start:docker": "docker compose up",
         "stop:docker": "docker compose down",
         "build": "rimraf dist && swc ./src -d dist",
-        "test": "jest --detectOpenHandles --watchAll",
+        "test": "jest --detectOpenHandles --collectCoverage --watchAll",
         "test:staging": "jest --detectOpenHandles",
         "test:docker": "docker compose exec backend yarn test",
         "install:docker": "docker compose exec backend yarn install --save"

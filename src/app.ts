@@ -7,7 +7,7 @@ import { Request, Response } from 'express';
 import 'express-async-errors';
 dotenv.config();
 
-import errorHandler from './middlewares/errorHandler';
+import errorHandler from './middleware/errorHandler';
 import NotFoundError from './errors/NotFoundError';
 // Api routes
 import userApi from './routes/user.route';
